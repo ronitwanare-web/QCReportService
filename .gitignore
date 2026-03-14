@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual environments
+venv/
+.env/
+
+# Mac / Linux
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit cache
+.streamlit/
+
+# Docker
+*.tar
+
+# Credentials (VERY IMPORTANT)
+credentials/
+*.json
+
+# Temporary data
+*.csv
+*.zip
+*.tmp

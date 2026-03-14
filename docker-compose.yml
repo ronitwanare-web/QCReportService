@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    container_name: report_backend
+    volumes:
+      - ./credentials:/app/credentials:ro
+    ports:
+      - "8000:8000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+  streamlit:
+    build: .
+    container_name: report_streamlit
+    volumes:
+      - ./credentials:/app/credentials:ro
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    command: streamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0
