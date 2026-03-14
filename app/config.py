@@ -6,17 +6,17 @@ class Settings:
     # -----------------------
     # Elasticsearch
     # -----------------------
-    ELASTIC_CLOUD_ID = "Inito_Logs:YOUR_CLOUD_ID_HERE"
+    ELASTIC_CLOUD_ID = "Inito_Logs:YXAtc291dGgtMS5hd3MuZWxhc3RpYy1jbG91ZC5jb206NDQzJGUwMzJmOWY2NjNlODQzOWJhNjIxMjk0YWUxMDEyOWZjJDFiY2E4NWFhZjM2MDQzMjk5N2FlNGE3MGFjYjgyNDAw"
     ELASTIC_USERNAME = "ronit.wanare@inito.com"
     ELASTIC_PASSWORD = "123456789"
 
-    ELASTIC_TIME_FIELD = "createdAt"
+    ELASTIC_TIME_FIELD = "@timestamp"
 
     # -----------------------
     # GCP / GCS
     # -----------------------
     GCP_PROJECT = "ng-manufacturing"
-    GCP_CREDENTIALS_JSON = "/app/credentials/ng-manufacturing-readonly.json"
+    GCP_CREDENTIALS_JSON = "/app/credentials/ng-manufacturing-c132f4a2ca85-readonly.json"
 
     # -----------------------
     # Per source config

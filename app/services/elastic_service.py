@@ -15,12 +15,12 @@ class ElasticService:
         return settings.SOURCE_CONFIG[source_flag]["elastic_index"]
 
     def fetch_reports_by_filters(
-        self,
-        station_type: str,
-        start_time: str,
-        end_time: str,
-        source_flag: str,
-        size: int = 10000,
+    self,
+    station_type: str,
+    start_time: str,
+    end_time: str,
+    source_flag: str,
+    size: int = 10000,
     ) -> List[Dict[str, Any]]:
         index_name = self._get_index(source_flag)
         time_field = settings.ELASTIC_TIME_FIELD
@@ -47,7 +47,7 @@ class ElasticService:
                 time_field,
                 "report.tests",
             ],
-            "sort": [{time_field: {"order": "asc"}}],
+            "sort": [{time_field: {"order": "desc"}}],
             "size": size,
         }
 
@@ -59,12 +59,12 @@ class ElasticService:
         return res.get("hits", {}).get("hits", [])
 
     def fetch_uuids(
-        self,
-        station_type: str,
-        start_time: str,
-        end_time: str,
-        source_flag: str,
-        size: int = 10000,
+    self,
+    station_type: str,
+    start_time: str,
+    end_time: str,
+    source_flag: str,
+    size: int = 10000,
     ) -> List[Dict[str, Any]]:
         docs = self.fetch_reports_by_filters(
             station_type=station_type,
